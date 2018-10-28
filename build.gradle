@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+}
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 27
+
+signingConfigs {
+ release {
+ storeFile file("my-release-key.jks")
+ storePassword "Valeriaeslaley23"
+ keyAlias "my-alias"
+ keyPassword "Valeriaeslaley23"
+ }
+ }
+buildTypes {
+ release {
+ signingConfig signingConfigs.release
+ }
+}
+    }
+
+}
